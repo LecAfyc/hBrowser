@@ -59,7 +59,7 @@ export struct InfoView{
           Column(){
             Text($r('app.string.donate')).fontSize('35px').fontWeight(FontWeight.Regular).margin({top:6})
             Text($r('app.string.donate_description')).fontSize('35px').fontWeight(FontWeight.Medium)
-            Button($r('app.string.search'),{ type: ButtonType.Capsule, stateEffect: false })
+            Button($r('app.string.click_to_open'),{ type: ButtonType.Capsule, stateEffect: false })
               .fontSize('40px')
               .fontWeight(FontWeight.Medium)
               .margin({bottom:6})
