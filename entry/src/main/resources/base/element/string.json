@@ -11,6 +11,130 @@
     {
       "name": "EntryAbility_label",
       "value": "hBrowser"
+    },
+    {
+      "name": "search",
+      "value": "搜点什么..."
+    },
+    {
+      "name": "baidu",
+      "value": "百度"
+    },
+    {
+      "name": "bing",
+      "value": "必应"
+    },
+    {
+      "name": "openurl",
+      "value": "作为URL打开"
+    },
+    {
+      "name": "down",
+      "value": "向下还有更多 ↓"
+    },
+    {
+      "name": "about",
+      "value": "关于软件"
+    },
+    {
+      "name": "websites",
+      "value": "快速访问"
+    },
+    {
+      "name": "wallpaper",
+      "value": "选择壁纸"
+    },
+    {
+      "name": "author",
+      "value": "开发者"
+    },
+    {
+      "name": "icon_author",
+      "value": "图标贡献"
+    },
+    {
+      "name": "github",
+      "value": "源码仓库"
+    },
+    {
+      "name": "click_to_open",
+      "value": "点击查看"
+    },
+    {
+      "name": "donate",
+      "value": "赞助我"
+    },
+    {
+      "name": "donate_description",
+      "value": "给开发者买一杯咖啡！"
+    },
+    {
+      "name": "start",
+      "value": "开始使用>>"
+    },
+    {
+      "name": "click_to_chose",
+      "value": "点击选择壁纸"
+    },
+    {
+      "name": "wallpaper_description",
+      "value": "来源：必应壁纸"
+    },
+    {
+      "name": "wallpaper_tip",
+      "value": "已将壁纸设为"
+    },
+    {
+      "name": "bili",
+      "value": "哔哩哔哩"
+    },
+    {
+      "name": "zhihu",
+      "value": "知乎"
+    },
+    {
+      "name": "bing_translate",
+      "value": "必应翻译"
+    },
+    {
+      "name": "huawei",
+      "value": "华为"
+    },
+    {
+      "name": "error",
+      "value": "发生错误"
+    },
+    {
+      "name": "back",
+      "value": "返回"
+    },
+    {
+      "name": "refresh",
+      "value": "刷新"
+    },
+    {
+      "name": "maxscale",
+      "value": "不能再大惹ヽ(*。>Д<)o゜"
+    },
+    {
+      "name": "minscale",
+      "value": "不能再小惹ヽ(*。>Д<)o゜"
+    },
+    {
+      "name": "setscale",
+      "value": "缩放大小设置为："
+    },
+    {
+      "name": "battery",
+      "value": "电量"
+    },
+    {
+      "name": "computer_mode",
+      "value": "电脑模式"
+    },
+    {
+      "name": "safe_mode",
+      "value": "安全模式"
     }
   ]
 }

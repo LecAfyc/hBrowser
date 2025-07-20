@@ -7,7 +7,7 @@ PersistentStorage.persistProp('WallPaper', 'WallPaper1');
 export struct WebSitesView{
   @Consume('pageInfo') pageInfo: NavPathStack;
   @StorageLink('WallPaper') WallPaper: string = 'WallPaper1';
-  content = ["哔哩哔哩", "必应翻译", "知乎", "GitHub", "华为"]
+  content = [$r('app.string.bili'), $r('app.string.bing_translate'), $r('app.string.zhihu'), "GitHub", $r('app.string.huawei')]
   url = ["https://www.bilibili.com", "https://cn.bing.com/translator", "https://www.zhihu.com", "https://github.com", "https://www.huawei.com"]
 
   build() {

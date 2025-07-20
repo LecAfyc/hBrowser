@@ -33,7 +33,7 @@ struct Index {
     Navigation(this.pageInfo) {
       Swiper(){
         Column(){
-          TextInput({ placeholder: '搜点什么...' })
+          TextInput({ placeholder: $r('app.string.search') })
             .textAlign(TextAlign.Center)
             .type(InputType.Normal)
             .margin({ top: 30})
@@ -50,7 +50,7 @@ struct Index {
                   .fontSize('18fp')
                   .fontColor([Color.White])
                   .fontWeight(FontWeight.Medium)
-                Text('百度').fontSize('18fp').fontColor(Color.White).fontWeight(FontWeight.Medium)
+                Text($r('app.string.baidu')).fontSize('18fp').fontColor(Color.White).fontWeight(FontWeight.Medium)
               }.alignItems(VerticalAlign.Center)
             }
             .shadow({ radius: 2, color: 'rgba(0, 0, 0, 0.55)', offsetX: 2, offsetY: 2 })
@@ -66,7 +66,7 @@ struct Index {
                   .fontSize('18fp')
                   .fontColor([Color.White])
                   .fontWeight(FontWeight.Medium)
-                Text('必应').fontSize('18fp').fontColor(Color.White).fontWeight(FontWeight.Medium)
+                Text($r('app.string.bing')).fontSize('18fp').fontColor(Color.White).fontWeight(FontWeight.Medium)
               }.alignItems(VerticalAlign.Center)
             }
             .shadow({ radius: 2, color: 'rgba(0, 0, 0, 0.55)', offsetX: 2, offsetY: 2 })
@@ -87,7 +87,7 @@ struct Index {
                 .fontSize('18fp')
                 .fontColor([Color.White])
                 .fontWeight(FontWeight.Medium)
-              Text('作为URL打开').fontSize('18fp').fontColor(Color.White).fontWeight(FontWeight.Medium)
+              Text($r('app.string.openurl')).fontSize('18fp').fontColor(Color.White).fontWeight(FontWeight.Medium)
             }.alignItems(VerticalAlign.Center)
           }
           .shadow({ radius: 2, color: 'rgba(0, 0, 0, 0.55)', offsetX: 2, offsetY: 2 })
@@ -99,7 +99,7 @@ struct Index {
           .onClick(() => {
             this.pageInfo.pushPath({name: "WebView", param: this.input})
           })
-          Text('向下还有更多 ↓')
+          Text($r('app.string.down'))
             .margin({top:12})
             .fontSize('15fp')
             .width('50%')
@@ -118,7 +118,7 @@ struct Index {
                 .fontSize('18fp')
                 .fontColor([Color.White])
                 .fontWeight(FontWeight.Medium)
-              Text(' 关于软件').fontSize('18fp').fontColor(Color.White).fontWeight(FontWeight.Medium)
+              Text($r('app.string.about')).fontSize('18fp').fontColor(Color.White).fontWeight(FontWeight.Medium)
             }.alignItems(VerticalAlign.Center)
           }
           .shadow({ radius: 2, color: 'rgba(0, 0, 0, 0.55)', offsetX: 2, offsetY: 2 })
@@ -135,7 +135,7 @@ struct Index {
                 .fontSize('18fp')
                 .fontColor([Color.White])
                 .fontWeight(FontWeight.Medium)
-              Text(' 快速访问').fontSize('18fp').fontColor(Color.White).fontWeight(FontWeight.Medium)
+              Text($r('app.string.websites')).fontSize('18fp').fontColor(Color.White).fontWeight(FontWeight.Medium)
             }.alignItems(VerticalAlign.Center)
           }
           .shadow({ radius: 2, color: 'rgba(0, 0, 0, 0.55)', offsetX: 2, offsetY: 2 })
@@ -152,7 +152,7 @@ struct Index {
                 .fontSize('18fp')
                 .fontColor([Color.White])
                 .fontWeight(FontWeight.Medium)
-              Text(' 选择壁纸').fontSize('18fp').fontColor(Color.White).fontWeight(FontWeight.Medium)
+              Text($r('app.string.wallpaper')).fontSize('18fp').fontColor(Color.White).fontWeight(FontWeight.Medium)
             }.alignItems(VerticalAlign.Center)
           }
           .shadow({ radius: 2, color: 'rgba(0, 0, 0, 0.55)', offsetX: 2, offsetY: 2 })

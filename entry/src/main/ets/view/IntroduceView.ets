@@ -32,7 +32,7 @@ export struct IntroduceView{
         Column(){
           Image($r("app.media.foreground")).width('20%').height('20%')
           Text("hBrowser").fontSize('45px').fontWeight(FontWeight.Bold).margin({top:6})
-          Button("开始使用>>",{ type: ButtonType.Capsule, stateEffect: false })
+          Button($r('app.string.start'),{ type: ButtonType.Capsule, stateEffect: false })
             .fontSize('27px')
             .fontWeight(FontWeight.Bold)
             .margin({top:6})

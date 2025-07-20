@@ -14,8 +14,8 @@ export struct PicturesView{
       List(){
         ListItem(){
           Column(){
-            Text("点击选择壁纸").fontSize('45px').fontWeight(FontWeight.Bold).margin({top:17})
-            Text("来源：必应壁纸").fontSize('35px').fontWeight(FontWeight.Bold).margin({top:7})
+            Text($r('app.string.click_to_chose')).fontSize('45px').fontWeight(FontWeight.Bold).margin({top:17})
+            Text($r('app.string.wallpaper_description')).fontSize('35px').fontWeight(FontWeight.Bold).margin({top:7})
           }
         }
         ForEach(this.names, (item: string, index: number) => {
@@ -35,7 +35,7 @@ export struct PicturesView{
             .onClick(() => {
               this.WallPaper = item;
               this.getUIContext().getPromptAction().showToast({
-                message: `已将壁纸设置为${item}`,
+                message: $r('app.string.wallpaper_tip') + item,
                 duration: 1500,
                 showMode: promptAction.ToastShowMode.DEFAULT,
                 bottom: 80

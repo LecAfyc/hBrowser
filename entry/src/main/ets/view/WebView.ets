@@ -43,34 +43,20 @@ export struct WebView{
             this.onAlert = true;
             this.uiContext.showAlertDialog({
               title: event.request.getRequestUrl(),
-              message: "发生错误\n" + event.error.getErrorInfo() + "\n点击确定返回",
-              confirm: {
-                value: "确定",
+              message: $r('app.string.error') + "\n" + event.error.getErrorInfo(),
+              primaryButton: {
+                value: $r('app.string.back'),
                 action: () => {
                   this.onAlert = false;
                   if(this.controller.accessBackward()) this.controller.backward();
                   else this.pageInfo.pop();
                 }
               },
-              backgroundBlurStyle: BlurStyle.COMPONENT_ULTRA_THICK,
-              onWillDismiss: () => {
-                this.onAlert = false;
-              }
-            })
-          }
-        })
-        .onHttpErrorReceive((event) => {
-          if (!this.onAlert){
-            this.onAlert = true;
-            this.uiContext.showAlertDialog({
-              title: event.request.getRequestUrl(),
-              message: "发生错误\n" + event.response.getReasonMessage() + "\n点击确定返回",
-              confirm: {
-                value: "确定",
+              secondaryButton: {
+                value: $r('app.string.refresh'),
                 action: () => {
                   this.onAlert = false;
-                  if(this.controller.accessBackward()) this.controller.backward();
-                  else this.pageInfo.pop();
+                  this.controller.refresh();
                 }
               },
               backgroundBlurStyle: BlurStyle.COMPONENT_ULTRA_THICK,
@@ -99,7 +85,7 @@ export struct WebView{
             .onClick(() => {
               if(this.factor >= 280){
                 this.getUIContext().getPromptAction().showToast({
-                  message: '不能再大惹ヽ(*。>Д<)o゜',
+                  message: $r('app.string.maxscale'),
                   duration: 1000,
                   showMode: promptAction.ToastShowMode.DEFAULT,
                   bottom: 80
@@ -131,7 +117,7 @@ export struct WebView{
             .onClick(() => {
               if(this.factor <= 20){
                 this.getUIContext().getPromptAction().showToast({
-                  message: '不能再小惹ヽ(*。>Д<)o゜',
+                  message: $r('app.string.minscale'),
                   duration: 1000,
                   showMode: promptAction.ToastShowMode.DEFAULT,
                   bottom: 80
@@ -140,7 +126,7 @@ export struct WebView{
                 this.factor -= 20;
                 ScaleZoom(this.controller, this.factor, this.zoom);
                 this.getUIContext().getPromptAction().showToast({
-                  message: `缩放大小设置为${this.factor}%`,
+                  message: $r('app.string.setscale') + `${this.factor}%`,
                   duration: 1000,
                   showMode: promptAction.ToastShowMode.DEFAULT,
                   bottom: 80
@@ -247,7 +233,7 @@ export struct WebView{
             .fontSize('38px')
           Progress({ value: this.batterySOCInfo, total: 100, type: ProgressType.Capsule }).width('55%').height('15%')
             .style({
-              content: `电量 ${this.batterySOCInfo}%`,
+              content: $r('app.string.battery') + ` ${this.batterySOCInfo}%`,
               font: {size: '20px',weight: FontWeight.Medium},
               fontColor: Color.Black,
               enableScanEffect: false
@@ -255,7 +241,7 @@ export struct WebView{
             .color(this.batterySOCInfo < 15 ? Color.Red : Color.Green)
             .margin({top: 10})
           Toggle({ type: ToggleType.Button, isOn: true }) {
-            Text('电脑模式')
+            Text($r('app.string.computer_mode'))
               .fontColor(Color.Black)
               .fontSize(12)
           }
@@ -268,7 +254,7 @@ export struct WebView{
           .margin({top:10})
           .shadow({ radius: 2, color: 'rgba(0, 0, 0, 0.55)', offsetX: 2, offsetY: 2 })
           Toggle({ type: ToggleType.Button, isOn: false }) {
-            Text('隐私模式')
+            Text($r('app.string.safe_mode'))
               .fontColor(Color.Black)
               .fontSize(12)
           }

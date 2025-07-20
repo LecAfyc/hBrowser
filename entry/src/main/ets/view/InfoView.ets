@@ -13,13 +13,13 @@ export struct InfoView{
         ArcListItem(){
           Column(){
             Image($r("app.media.foreground")).width('20%').height('20%')
-            Text("hBrowser").fontSize('45px').fontWeight(FontWeight.Bold).margin({top:6})
+            Text($r('app.string.EntryAbility_label')).fontSize('45px').fontWeight(FontWeight.Bold).margin({top:6})
           }
         }
         ArcListItem(){
           Column(){
-            Text("开发者").fontSize('35px').fontWeight(FontWeight.Regular).margin({top:6})
-            Text("@RegeditYC(华为)").fontSize('40px').fontWeight(FontWeight.Medium)
+            Text($r('app.string.author')).fontSize('35px').fontWeight(FontWeight.Regular).margin({top:6})
+            Text("@RegeditYC(HW)").fontSize('40px').fontWeight(FontWeight.Medium)
             Text("@LecAfyc(Github)").fontSize('40px').fontWeight(FontWeight.Medium).margin({bottom:6})
           }
           .shadow({ radius: 2, color: 'rgba(0, 0, 0, 0.55)', offsetX: 2, offsetY: 2 })
@@ -29,7 +29,7 @@ export struct InfoView{
         }
         ArcListItem(){
           Column(){
-            Text("图标贡献").fontSize('35px').fontWeight(FontWeight.Regular).margin({top:6})
+            Text($r('app.string.icon_author')).fontSize('35px').fontWeight(FontWeight.Regular).margin({top:6})
             Text("@EXE(QQ)").fontSize('40px').fontWeight(FontWeight.Medium)
             Text("@2961564671(QQ)").fontSize('40px').fontWeight(FontWeight.Medium).margin({bottom:6})
           }
@@ -40,9 +40,9 @@ export struct InfoView{
         }
         ArcListItem(){
           Column(){
-            Text("源码仓库").fontSize('35px').fontWeight(FontWeight.Regular).margin({top:6})
+            Text($r('app.string.github')).fontSize('35px').fontWeight(FontWeight.Regular).margin({top:6})
             Text("Github/hBrowser").fontSize('40px').fontWeight(FontWeight.Medium)
-            Button("点击查看",{ type: ButtonType.Capsule, stateEffect: false })
+            Button($r('app.string.click_to_open'),{ type: ButtonType.Capsule, stateEffect: false })
               .fontSize('40px')
               .fontWeight(FontWeight.Medium)
               .margin({bottom:6})
@@ -57,9 +57,9 @@ export struct InfoView{
         }
         ArcListItem(){
           Column(){
-            Text("支持我").fontSize('35px').fontWeight(FontWeight.Regular).margin({top:6})
-            Text("给开发者买一杯咖啡！").fontSize('35px').fontWeight(FontWeight.Medium)
-            Button("点击赞助",{ type: ButtonType.Capsule, stateEffect: false })
+            Text($r('app.string.donate')).fontSize('35px').fontWeight(FontWeight.Regular).margin({top:6})
+            Text($r('app.string.donate_description')).fontSize('35px').fontWeight(FontWeight.Medium)
+            Button($r('app.string.search'),{ type: ButtonType.Capsule, stateEffect: false })
               .fontSize('40px')
               .fontWeight(FontWeight.Medium)
               .margin({bottom:6})
