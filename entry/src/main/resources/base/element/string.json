@@ -102,7 +102,7 @@
     },
     {
       "name": "error",
-      "value": "发生错误"
+      "value": "当前页面发生错误"
     },
     {
       "name": "back",
@@ -135,6 +135,14 @@
     {
       "name": "safe_mode",
       "value": "安全模式"
+    },
+    {
+      "name": "warning",
+      "value": "部分资源发生错误"
+    },
+    {
+      "name": "ignore",
+      "value": "忽略"
     }
   ]
 }

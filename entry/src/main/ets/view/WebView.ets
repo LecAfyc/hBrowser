@@ -41,29 +41,54 @@ export struct WebView{
         .onErrorReceive((event) => {
           if (event.error.getErrorCode() != -2 && !this.onAlert){
             this.onAlert = true;
-            this.uiContext.showAlertDialog({
-              title: event.request.getRequestUrl(),
-              message: $r('app.string.error') + "\n" + event.error.getErrorInfo(),
-              primaryButton: {
-                value: $r('app.string.back'),
-                action: () => {
+            if(event.request.getRequestUrl() === this.controller.getUrl()){  //error happens on current website
+              this.uiContext.showAlertDialog({
+                title: event.request.getRequestUrl(),
+                message: $r('app.string.error') + "\n" + event.error.getErrorInfo(),
+                primaryButton: {
+                  value: $r('app.string.back'),
+                  action: () => {
+                    this.onAlert = false;
+                    if(this.controller.accessBackward()) this.controller.backward();
+                    else this.pageInfo.pop();
+                  }
+                },
+                secondaryButton: {
+                  value: $r('app.string.refresh'),
+                  action: () => {
+                    this.onAlert = false;
+                    this.controller.refresh();
+                  }
+                },
+                backgroundBlurStyle: BlurStyle.COMPONENT_ULTRA_THICK,
+                onWillDismiss: () => {
                   this.onAlert = false;
-                  if(this.controller.accessBackward()) this.controller.backward();
-                  else this.pageInfo.pop();
                 }
-              },
-              secondaryButton: {
-                value: $r('app.string.refresh'),
-                action: () => {
+              })
+            }else{   //error happens on some resource of the current website
+              this.uiContext.showAlertDialog({
+                title: event.request.getRequestUrl(),
+                message: $r('app.string.warning') + "\n" + event.error.getErrorInfo(),
+                primaryButton: {
+                  value: $r('app.string.ignore'),
+                  action: () => {
+                    this.onAlert = false;
+                  }
+                },
+                secondaryButton: {
+                  value: $r('app.string.refresh'),
+                  action: () => {
+                    this.onAlert = false;
+                    this.controller.refresh();
+                  }
+                },
+                backgroundBlurStyle: BlurStyle.COMPONENT_ULTRA_THICK,
+                onWillDismiss: () => {
                   this.onAlert = false;
-                  this.controller.refresh();
                 }
-              },
-              backgroundBlurStyle: BlurStyle.COMPONENT_ULTRA_THICK,
-              onWillDismiss: () => {
-                this.onAlert = false;
-              }
-            })
+              })
+            }
+
           }
         })
       //ToolBar
@@ -94,7 +119,7 @@ export struct WebView{
                 this.factor += 20;
                 ScaleZoom(this.controller, this.factor, this.zoom);
                 this.getUIContext().getPromptAction().showToast({
-                  message: `缩放大小设置为${this.factor}%`,
+                  message: $r('app.string.setscale') + `${this.factor}%`,
                   duration: 1000,
                   showMode: promptAction.ToastShowMode.DEFAULT,
                   bottom: 80
