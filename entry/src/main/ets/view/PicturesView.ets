@@ -1,4 +1,6 @@
 import { promptAction } from "@kit.ArkUI";
+import resourceManager from "@ohos.resourceManager";
+
 PersistentStorage.persistProp('WallPaper', 'WallPaper1');
 
 @Component
@@ -35,7 +37,7 @@ export struct PicturesView{
             .onClick(() => {
               this.WallPaper = item;
               this.getUIContext().getPromptAction().showToast({
-                message: $r('app.string.wallpaper_tip') + item,
+                message: "壁纸已被设为" + item,
                 duration: 1500,
                 showMode: promptAction.ToastShowMode.DEFAULT,
                 bottom: 80

@@ -44,7 +44,7 @@ export struct WebView{
             if(event.request.getRequestUrl() === this.controller.getUrl()){  //error happens on current website
               this.uiContext.showAlertDialog({
                 title: event.request.getRequestUrl(),
-                message: $r('app.string.error') + "\n" + event.error.getErrorInfo(),
+                message: "当前页面发生错误\n" + event.error.getErrorInfo(),
                 primaryButton: {
                   value: $r('app.string.back'),
                   action: () => {
@@ -68,7 +68,7 @@ export struct WebView{
             }else{   //error happens on some resource of the current website
               this.uiContext.showAlertDialog({
                 title: event.request.getRequestUrl(),
-                message: $r('app.string.warning') + "\n" + event.error.getErrorInfo(),
+                message: "页面资源发生错误\n" + event.error.getErrorInfo(),
                 primaryButton: {
                   value: $r('app.string.ignore'),
                   action: () => {
@@ -119,7 +119,7 @@ export struct WebView{
                 this.factor += 20;
                 ScaleZoom(this.controller, this.factor, this.zoom);
                 this.getUIContext().getPromptAction().showToast({
-                  message: $r('app.string.setscale') + `${this.factor}%`,
+                  message: `缩放大小设置为 ${this.factor}%`,
                   duration: 1000,
                   showMode: promptAction.ToastShowMode.DEFAULT,
                   bottom: 80
@@ -151,7 +151,7 @@ export struct WebView{
                 this.factor -= 20;
                 ScaleZoom(this.controller, this.factor, this.zoom);
                 this.getUIContext().getPromptAction().showToast({
-                  message: $r('app.string.setscale') + `${this.factor}%`,
+                  message:  `缩放大小设置为 ${this.factor}%`,
                   duration: 1000,
                   showMode: promptAction.ToastShowMode.DEFAULT,
                   bottom: 80
