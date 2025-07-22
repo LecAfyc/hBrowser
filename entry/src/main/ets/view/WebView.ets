@@ -258,7 +258,7 @@ export struct WebView{
             .fontSize('38px')
           Progress({ value: this.batterySOCInfo, total: 100, type: ProgressType.Capsule }).width('55%').height('15%')
             .style({
-              content: $r('app.string.battery') + ` ${this.batterySOCInfo}%`,
+              content:  `电量 ${this.batterySOCInfo}%`,
               font: {size: '20px',weight: FontWeight.Medium},
               fontColor: Color.Black,
               enableScanEffect: false
