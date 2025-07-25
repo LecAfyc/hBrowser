@@ -143,6 +143,10 @@
     {
       "name": "ignore",
       "value": "忽略"
+    },
+    {
+      "name": "square_mode",
+      "value": "方屏模式"
     }
   ]
 }

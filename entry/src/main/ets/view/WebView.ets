@@ -13,6 +13,7 @@ export struct WebView{
   @Consume('pageInfo') pageInfo: NavPathStack;
   @State isToolBarOpen: boolean = false;
   @State batterySOCInfo: number = batteryInfo.batterySOC;
+  @State isSquareModeOn: boolean = false;
 
   onAlert: boolean = false;
   pathStack: NavPathStack | undefined = undefined;
@@ -29,12 +30,15 @@ export struct WebView{
         .focusable(true)
         .focusOnTouch(true)
         .defaultFocus(true)
+        .width('100%')
+        .height('100%')
+        .position({x:this.isSquareModeOn ? 2 : 0, y:this.isSquareModeOn ? 2 : 0})
+        .scale({x:this.isSquareModeOn ? 0.71 : 1,y:this.isSquareModeOn ? 0.71 : 1})
+        .javaScriptAccess(true)
+        .domStorageAccess(true)
         .onDigitalCrown((event: CrownEvent) => {
           if(event.angularVelocity >= 85) this.isToolBarOpen = true
         })
-        .width('100%')
-        .height('100%')
-        .position({x:0, y:0})
         .onScaleChange((event) => {
           this.zoom = event.newScale;
         })
@@ -279,14 +283,13 @@ export struct WebView{
           .margin({top:10})
           .shadow({ radius: 2, color: 'rgba(0, 0, 0, 0.55)', offsetX: 2, offsetY: 2 })
           Toggle({ type: ToggleType.Button, isOn: false }) {
-            Text($r('app.string.safe_mode'))
+            Text($r('app.string.square_mode'))
               .fontColor(Color.Black)
               .fontSize(12)
           }
           .width(80)
           .onChange((isOn: boolean) => {
-            this.controller.enableSafeBrowsing(isOn);
-            this.controller.refresh();
+            this.isSquareModeOn = isOn;
           })
           .margin({top:10})
           .shadow({ radius: 2, color: 'rgba(0, 0, 0, 0.55)', offsetX: 2, offsetY: 2 })
